@@ -53,6 +53,7 @@ public class HelloServlet extends HttpServlet {
                 double result4 = jsonObject.get("a").getAsDouble() / jsonObject.get("b").getAsDouble();
                 pw.print(gson.fromJson("{\n\"result\" : \"" + result4 + "\"\n}", JsonObject.class));
                 break;
+            default: pw.print(gson.fromJson("{\n\"Неизвестная операция, существующие операции\" : \"+, -, *, /\"\n}", JsonObject.class));
         }
     }
 }
